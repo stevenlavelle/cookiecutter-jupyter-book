@@ -2,7 +2,7 @@
 title: {{ cookiecutter.book_name }}
 author: {{ cookiecutter.author_name }} 
 copyright: "{% now 'local', '%Y' %}" 
-logo: _static/logo.png 
+logo: _images/logo.png 
 
 execute:
   execute_notebooks: force
