@@ -2,18 +2,23 @@ format: jb-book
 root: intro
 parts:
   - caption: Overview
-    numbered: True
+    # numbered: 3
+    # maxdepth: 2
     chapters:
+    # - file: 01_setup
     - file: 01_setup/setup
       sections:
       - file: 01_setup/installation
       - file: 01_setup/configuration
+    # - file: 02_basic_usage
     - file: 02_basic_usage/basic_usage
       sections:
       - file: 02_basic_usage/basic_examples
   - caption: Guides
-    numbered: True
+    # numbered: 3
+    # maxdepth: 2
     chapters:
+    # - file: 03_advanced_usage
     - file: 03_advanced_usage/advanced_usage
       sections:
       - file: 03_advanced_usage/advanced_examples

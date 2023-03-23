@@ -1,24 +1,82 @@
 # Book settings
-title: {{ cookiecutter.book_name }}
-author: {{ cookiecutter.author_name }} 
-copyright: "{% now 'local', '%Y' %}" 
+title: Jinja2
+author: Steven Lavelle 
+copyright: "2023" 
 logo: _images/logo.png 
 
+# Patterns to skip
+exclude_patterns: [_build, Thumbs.db, .DS_Store, "**.ipynb_checkpoints"]
+only_build_toc_files: false
+
+# Execution settings
 execute:
-  execute_notebooks: force
+  execute_notebooks: auto
+  cache: "_build/.jupyter_cache/"
+  exclude_patterns: []
+  timeout: 30
+  run_in_temp: false
+  allow_errors: false
+  stderr_output: show
 
 latex:
+  latex_engine: pdflatex
+  use_jupyterbook_latex: true
   latex_documents:
     targetname: book.tex
 
 bibtex_bibfiles:
   - references.bib
 
+# Launch button settings
+launch_buttons:
+  notebook_interface: classic  # ["classic", "jupyterlab"]
+  binderhub_url: ""  # https://mybinder.org
+  jupyterhub_url: ""  # The URL of the JupyterHub
+  thebe: false # Requires the repository to run on Binder
+  colab_url: ""
+
 repository:
-  url: https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.book_slug }}  # Online location of your book
+  url: https://github.com/stevenlavelle/jinja2
   path_to_book: docs
   branch: main 
 
+# HTML-specific settings
 html:
+  favicon: "_images/favicon.ico"
+  use_edit_page_button: false  
   use_issues_button: true
   use_repository_button: true
+  use_multitoc_numbering: true
+  baseurl: ""
+  home_page_in_navbar: true
+  extra_footer: ""
+  google_analytics_id: ""
+  analytics:
+
+  comments:
+    hypothesis: false
+    utterances: false
+  announcement: ""
+
+parse:
+  myst_enable_extensions:
+    - amsmath
+    - colon_fence
+    - deflist
+    - dollarmath
+    - html_admonition
+    - html_image
+    - linkify
+    - replacements
+    - smartquotes
+    - substitution
+    - tasklist
+  myst_url_schemes: [mailto, http, https]
+  myst_dmath_double_inline: true
+
+# Advanced and power-user settings
+sphinx:
+  extra_extensions: # Add extra extensions to Sphinx
+  local_extensions:
+  recursive_update: false
+  config: 
