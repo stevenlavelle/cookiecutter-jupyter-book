@@ -1,0 +1,19 @@
+{
+    "author_name": "Steven Lavelle",
+    "github_username": "{{ cookiecutter.author_name.lower().replace(' ', '') }}",
+    "book_name": "Jupyer Lab",
+    "book_slug": "{{ cookiecutter.book_name.lower().replace(' ', '_').replace('-', '_') }}",
+    "book_short_description": "This cookiecutter creates a simple boilerplate for a Jupyter Book.",
+    "version": "'0.0.1'",
+    "open_source_license": [
+        "MIT license",
+        "BSD license",
+        "Apache Software License 2.0",
+        "CC BY 4.0",
+        "CC BY-SA 4.0",
+        "None"
+    ],
+    "include_ci": [
+        "github"
+    ]
+}

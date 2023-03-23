@@ -1,0 +1,24 @@
+# Book settings
+title: {{ cookiecutter.book_name }}
+author: {{ cookiecutter.author_name }} 
+copyright: "{% now 'local', '%Y' %}" 
+logo: _static/logo.png 
+
+execute:
+  execute_notebooks: force
+
+latex:
+  latex_documents:
+    targetname: book.tex
+
+bibtex_bibfiles:
+  - references.bib
+
+repository:
+  url: https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.book_slug }}  # Online location of your book
+  path_to_book: docs
+  branch: main 
+
+html:
+  use_issues_button: true
+  use_repository_button: true
