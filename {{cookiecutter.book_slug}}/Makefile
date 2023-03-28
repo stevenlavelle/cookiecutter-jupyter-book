@@ -24,7 +24,8 @@ build:
 	jupyter-book build --all {{cookiecutter.book_slug}}
 
 clean:
-	rm -rf {{cookiecutter.book_slug}}/_build
+	source .venv/bin/activate; \
+	jupyter-book clean {{cookiecutter.book_slug}}/
 
 serve:
 	source .venv/bin/activate; \
