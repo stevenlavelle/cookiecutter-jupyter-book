@@ -1,5 +1,5 @@
 format: jb-book
-root: intro
+root: index
 parts:
   - caption: Overview
     # numbered: 3
@@ -22,3 +22,7 @@ parts:
     - file: 03_advanced_usage/advanced_usage
       sections:
       - file: 03_advanced_usage/advanced_examples
+  - caption: Appendices
+    chapters:
+      - file: glossary
+      - file: bibliography
