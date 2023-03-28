@@ -23,6 +23,10 @@ build:
 	source .venv/bin/activate; \
 	jupyter-book build --all {{cookiecutter.book_slug}}
 
+build-help:
+	source .venv/bin/activate; \
+	jupyter-book build -W -n --keep-going {{cookiecutter.book_slug}}/
+
 clean:
 	source .venv/bin/activate; \
 	jupyter-book clean {{cookiecutter.book_slug}}/
