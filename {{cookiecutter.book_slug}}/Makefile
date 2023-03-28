@@ -21,11 +21,11 @@ list-installed:
 
 build:
 	source .venv/bin/activate; \
-	{book_slug} build --all jupyter_lab
+	jupyter-book build --all {{cookiecutter.book_slug}}
 
 clean:
-	rm -rf {book_slug}/_build
+	rm -rf {{cookiecutter.book_slug}}/_build
 
 serve:
 	source .venv/bin/activate; \
-	python -m http.server 8000 --bind 127.0.0.1 --directory {book_slug}/_build/html
+	python -m http.server 8000 --bind 127.0.0.1 --directory {{cookiecutter.book_slug}}/_build/html
