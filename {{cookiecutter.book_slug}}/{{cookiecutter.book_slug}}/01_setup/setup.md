@@ -1,1 +1,4 @@
 # Setup
+
+```{tableofcontents}
+```
