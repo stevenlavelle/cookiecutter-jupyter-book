@@ -36,22 +36,22 @@ launch_buttons:
   colab_url: ""
 
 repository:
-  url: https://github.com/stevenlavelle/jinja2
-  path_to_book: docs
+  url: https://github.com/stevenlavelle/placeholder
+  path_to_book: placeholder
   branch: main 
 
 # HTML-specific settings
-html:
-  favicon: "_images/favicon.ico"
-  use_edit_page_button: false  
-  use_issues_button: true
-  use_repository_button: true
-  use_multitoc_numbering: true
-  baseurl: ""
-  home_page_in_navbar: true
-  extra_footer: ""
-  google_analytics_id: ""
-  analytics:
+# html:
+#   baseurl: ""
+#   favicon: "_images/favicon.ico"
+#   use_edit_page_button: false  
+#   use_issues_button: false
+#   use_repository_button: false
+#   use_multitoc_numbering: false
+#   home_page_in_navbar: false
+#   extra_footer: ""
+  # google_analytics_id: ""
+  # analytics:
 
   comments:
     hypothesis: false
@@ -77,6 +77,16 @@ parse:
 # Advanced and power-user settings
 sphinx:
   extra_extensions: # Add extra extensions to Sphinx
+  - sphinx.ext.autodoc
+  - sphinx_inline_tabs
+  - sphinx.ext.viewcode
+  - sphinx.ext.autosummary
   local_extensions:
   recursive_update: false
-  config: 
+  config:
+    language: en
+    html_show_copyright: false
+    html_theme: pydata_sphinx_theme
+    add_module_names: False
+    autosummary_generate: True
+    html_extra_path: []
