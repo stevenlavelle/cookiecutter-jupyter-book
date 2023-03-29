@@ -78,15 +78,15 @@ parse:
 sphinx:
   extra_extensions: # Add extra extensions to Sphinx
   - sphinx.ext.autodoc
-  - sphinx_inline_tabs
-  - sphinx.ext.viewcode
   - sphinx.ext.autosummary
+  # - sphinx.ext.viewcode
+  # - sphinx_inline_tabs
   local_extensions:
   recursive_update: false
   config:
     language: en
     html_show_copyright: false
-    html_theme: pydata_sphinx_theme
+    # html_theme: pydata_sphinx_theme
     add_module_names: False
     autosummary_generate: True
     html_extra_path: []

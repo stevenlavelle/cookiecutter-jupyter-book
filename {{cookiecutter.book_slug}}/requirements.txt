@@ -1,7 +1,7 @@
 pip
-numpy
-matplotlib
 jupyter-book
 jupytext
-sphinx-inline-tabs
-pydata-sphinx-theme
+# numpy
+# matplotlib
+# sphinx-inline-tabs
+# pydata-sphinx-theme

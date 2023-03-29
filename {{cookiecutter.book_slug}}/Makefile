@@ -1,7 +1,11 @@
 export SHELL := /bin/bash
-.PHONY: venv sphinx-config install list-installed build build-help \
+.PHONY: install install-dev list-installed build build-help \
 		check-links clean clean-build clean-html clean-sphinx-config \
 		clean-venv serve 
+
+serve: build
+	source .venv/bin/activate; \
+	python -m http.server 8000 --bind 127.0.0.1 --directory {{cookiecutter.book_slug}}/_build/html
 
 help:
 	@echo "create 	- create a new chapter"
@@ -9,55 +13,53 @@ help:
 	@echo "serve 	- serve the built document"
 	@echo "clean 	- remove the built document folder"
 
-venv:
+.venv:
 	rm -rf .venv; \
 	python3 -m venv .venv
 
-sphinx-config:
-	source .venv/bin/activate; \
-	jupyter-book config sphinx placeholder
-
-install:
+install: .venv
 	source .venv/bin/activate; \
 	python -m pip install --upgrade --requirement requirements.txt
+
+install-dev: .venv
+	source .venv/bin/activate; \
+	python -m pip install --upgrade --requirement requirements-dev.txt
 
 list-installed:
 	source .venv/bin/activate; \
 	python -m pip list
 
-build:
+conf.py: install
 	source .venv/bin/activate; \
-	jupyter-book build --all --verbose --builder html placeholder
+	jupyter-book config sphinx {{cookiecutter.book_slug}}
+
+build: conf.py
+	source .venv/bin/activate; \
+	jupyter-book build --all --verbose --builder html {{cookiecutter.book_slug}}
 
 build-help:
 	source .venv/bin/activate; \
-	jupyter-book build -W -n --keep-going placeholder/
+	jupyter-book build -W -n --keep-going {{cookiecutter.book_slug}}/
 
 check-links:
 	source .venv/bin/activate; \
-	jupyter-book build placeholder --builder linkcheck
+	jupyter-book build {{cookiecutter.book_slug}} --builder linkcheck
 
-clean:
-	source .venv/bin/activate; \
-	jupyter-book clean placeholder/
+clean: clean-build clean-sphinx-config clean-venv  
 
 clean-html:
 	source .venv/bin/activate; \
-	jupyter-book clean --html placeholder/
+	jupyter-book clean --html {{cookiecutter.book_slug}}/
 
 clean-build:
 	source .venv/bin/activate; \
-	jupyter-book clean --all placeholder/
+	jupyter-book clean --all {{cookiecutter.book_slug}}/
 
 clean-sphinx-config:
-	rm -f placeholder/conf.py
+	rm -f {{cookiecutter.book_slug}}/conf.py
 
 clean-venv:
 	rm -rf .venv
-
-serve:
-	source .venv/bin/activate; \
-	python -m http.server 8000 --bind 127.0.0.1 --directory placeholder/_build/html
 
 # myst
 # jupyter-book myst [OPTIONS] COMMAND [ARGS]...
