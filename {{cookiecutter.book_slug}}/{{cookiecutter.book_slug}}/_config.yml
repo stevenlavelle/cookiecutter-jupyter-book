@@ -40,7 +40,7 @@ repository:
   path_to_book: {{cookiecutter.book_slug}}
   branch: main 
 
-HTML-specific settings
+# HTML-specific settings
 html:
   baseurl: ""
   favicon: "_images/favicon.ico"
