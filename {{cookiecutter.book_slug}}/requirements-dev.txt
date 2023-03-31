@@ -3,5 +3,9 @@ jupyter-book
 jupytext
 numpy
 matplotlib
+# myst-parser
+# myst-nb
+# jupyterlab_myst
 # sphinx-inline-tabs
 # pydata-sphinx-theme
+# furo

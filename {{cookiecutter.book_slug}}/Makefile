@@ -66,3 +66,7 @@ clean-venv:
 
 # init
 # jupyter-book myst init [OPTIONS] [PATH]...
+
+# sphinx-build -nW --keep-going -b html docs/ docs/_build/html
+
+# myst-docutils-html5 [options] [<source> [<destination>]]

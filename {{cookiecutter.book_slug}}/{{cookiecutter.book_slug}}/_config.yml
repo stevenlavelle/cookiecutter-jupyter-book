@@ -1,5 +1,5 @@
 # Book settings
-title: Jinja2
+title: {{cookiecutter.book_slug}}
 author: Steven Lavelle 
 copyright: "2023" 
 logo: _images/logo.png 
@@ -28,30 +28,30 @@ bibtex_bibfiles:
   - references.bib
 
 # Launch button settings
-launch_buttons:
-  notebook_interface: classic  # ["classic", "jupyterlab"]
-  binderhub_url: ""  # https://mybinder.org
-  jupyterhub_url: ""  # The URL of the JupyterHub
-  thebe: false # Requires the repository to run on Binder
-  colab_url: ""
+# launch_buttons:
+#   notebook_interface: classic  # ["classic", "jupyterlab"]
+#   binderhub_url: ""  # https://mybinder.org
+#   jupyterhub_url: ""  # The URL of the JupyterHub
+#   thebe: false # Requires the repository to run on Binder
+#   colab_url: ""
 
 repository:
-  url: https://github.com/stevenlavelle/placeholder
-  path_to_book: placeholder
+  url: https://github.com/stevenlavelle/{{cookiecutter.book_slug}}
+  path_to_book: {{cookiecutter.book_slug}}
   branch: main 
 
-# HTML-specific settings
-# html:
-#   baseurl: ""
-#   favicon: "_images/favicon.ico"
-#   use_edit_page_button: false  
-#   use_issues_button: false
-#   use_repository_button: false
-#   use_multitoc_numbering: false
-#   home_page_in_navbar: false
-#   extra_footer: ""
-  # google_analytics_id: ""
-  # analytics:
+HTML-specific settings
+html:
+  baseurl: ""
+  favicon: "_images/favicon.ico"
+  home_page_in_navbar: false
+  use_multitoc_numbering: false
+  use_edit_page_button: false  
+  use_issues_button: false
+  use_repository_button: false
+  extra_footer: ""
+  google_analytics_id: ""
+  analytics:
 
   comments:
     hypothesis: false
@@ -87,6 +87,7 @@ sphinx:
     language: en
     html_show_copyright: false
     # html_theme: pydata_sphinx_theme
-    add_module_names: False
-    autosummary_generate: True
+    html_theme_options: {}
+    add_module_names: false
+    autosummary_generate: true
     html_extra_path: []
