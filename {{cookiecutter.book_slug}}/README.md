@@ -32,10 +32,9 @@ my_book
 │
 ├── my_book
 │   ├── _static
-│   ├── _templates
-│   ├── _images
 │   │   ├── favicon.ico
 │   │   └── logo.png
+│   ├── _templates
 │   │ 
 │   ├── 01_setup
 │   │   ├── setup.md

@@ -9,3 +9,6 @@ matplotlib
 # sphinx-inline-tabs
 # pydata-sphinx-theme
 # furo
+
+# pyyaml
+# sphinx-autobuild

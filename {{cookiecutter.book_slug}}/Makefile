@@ -60,6 +60,7 @@ clean-sphinx-config:
 
 clean-venv:
 	rm -rf .venv
+	python3 -m pip cache purge
 
 # myst
 # jupyter-book myst [OPTIONS] COMMAND [ARGS]...
@@ -67,6 +68,22 @@ clean-venv:
 # init
 # jupyter-book myst init [OPTIONS] [PATH]...
 
+# sphinx-build -b html sourcedir builddir
 # sphinx-build -nW --keep-going -b html docs/ docs/_build/html
 
 # myst-docutils-html5 [options] [<source> [<destination>]]
+
+# sphinx-autobuild [--host HOST] [--port PORT] [--pre-build COMMAND] sourcedir outdir
+# --open-browser
+# -a : Recommended to disable Sphinx's incremental builds
+
+jb-build:
+	source .venv/bin/activate; \
+	jupyter-book build --all --builder html {{cookiecutter.book_slug}}
+
+autobuild: jb-build
+	source .venv/bin/activate; \
+	sphinx-autobuild --host 127.0.0.1 --port 8000 {{cookiecutter.book_slug}} {{cookiecutter.book_slug}}/_build/html
+
+# jupyter-book config sphinx .
+# sphinx-autobuild . _build/html -b htmlcode

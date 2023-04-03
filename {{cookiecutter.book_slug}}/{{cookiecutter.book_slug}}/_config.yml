@@ -1,8 +1,8 @@
 # Book settings
 title: {{cookiecutter.book_slug}}
-author: Steven Lavelle 
-copyright: "2023" 
-logo: _images/logo.png 
+author: Steven Lavelle
+copyright: "2023"
+logo: _static/logo.png
 
 # Patterns to skip
 exclude_patterns: [_build, Thumbs.db, .DS_Store, "**.ipynb_checkpoints"]
@@ -38,15 +38,15 @@ bibtex_bibfiles:
 repository:
   url: https://github.com/stevenlavelle/{{cookiecutter.book_slug}}
   path_to_book: {{cookiecutter.book_slug}}
-  branch: main 
+  branch: main
 
 # HTML-specific settings
 html:
   baseurl: ""
-  favicon: "_images/favicon.ico"
+  favicon: "_static/favicon.ico"
   home_page_in_navbar: false
   use_multitoc_numbering: false
-  use_edit_page_button: false  
+  use_edit_page_button: false
   use_issues_button: false
   use_repository_button: false
   extra_footer: ""
@@ -77,8 +77,8 @@ parse:
 # Advanced and power-user settings
 sphinx:
   extra_extensions: # Add extra extensions to Sphinx
-  - sphinx.ext.autodoc
-  - sphinx.ext.autosummary
+    - sphinx.ext.autodoc
+    - sphinx.ext.autosummary
   # - sphinx.ext.viewcode
   # - sphinx_inline_tabs
   local_extensions:
